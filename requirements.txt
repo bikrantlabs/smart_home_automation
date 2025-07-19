@@ -1,0 +1,6 @@
+cffi==1.17.1
+PyAudio==0.2.14
+pycparser==2.22
+sounddevice==0.5.2
+SpeechRecognition==3.14.3
+typing_extensions==4.14.1
