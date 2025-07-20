@@ -1,14 +1,13 @@
 import sounddevice
 from core.command_handler import CommandHandler
 from core.command_parser import CommandParser
-from devices import Light, Fan
-
+from services.device_registry import DeviceRegistry
 from services.voice_input_service import VoiceInputService
+from config import PIN_MAP
+
 def main():
-    devices = {
-        "light":Light(pin=10),
-        "fan": Fan(pin=28)
-    }
+    # Initialize devices registry with pin as key and device instance as value
+    devices = DeviceRegistry.create_devices()
 
     voice_service = VoiceInputService()
     parser = CommandParser()

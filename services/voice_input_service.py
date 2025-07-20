@@ -13,7 +13,7 @@ class VoiceInputService:
             try:
 
                 text = self.recognizer.recognize_google(audio)
-                print(f"You said: ${text}")
+                print(f"You said: {text.capitalize()}")
                 return text.lower()
 
             except recognizer.UnknownValueError:

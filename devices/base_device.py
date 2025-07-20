@@ -1,20 +1,24 @@
 from abc import ABC, abstractmethod
+# devices/device.py
+class Device:
+    def __init__(self, pin: int, device_type: str):
+        self.pin = pin
+        self.device_type = device_type
+        self._status = "OFF"
+        self._setup_gpio()
 
-class Device(ABC):
-    def __init__(self):
-        self._status = "OFF"  # Default initial status
+    def _setup_gpio(self):
+        # GPIO.setmode(GPIO.BOARD or GPIO.BCM)
+        # GPIO.setup(self.pin, GPIO.OUT)
+        pass
 
-
-    @abstractmethod
     def turn_on(self):
-        pass
+        print(f"🟡 {self.device_type} on pin {self.pin} turned ON")
+        self._status = "ON"
 
+    def turn_off(self):
+        print(f"⚫ {self.device_type} on pin {self.pin} turned OFF")
+        self._status = "OFF"
 
-    @abstractmethod
-    def turn_on(self):
-        pass
-
-
-    @abstractmethod
-    def get_status(self):
-        pass
+    def get_status(self) -> str:
+        return self._status
