@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-# devices/device.py
+# devices/base_device.py
 class Device:
     def __init__(self, pin: int, device_type: str):
         self.pin = pin
