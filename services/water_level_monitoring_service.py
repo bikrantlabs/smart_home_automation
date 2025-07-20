@@ -9,7 +9,7 @@ class WaterLevelMonitorService(BaseService):
         self.daemon = True  # Optional: stops with main thread
 
     def run(self):
-        while True:
+        # while True:
             # logic to check water level and activate motor
             self.logger.system("Checking water level...")
             time.sleep(5)  # Delay or wait for sensor input
